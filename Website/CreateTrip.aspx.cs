@@ -40,7 +40,7 @@ public partial class _Default : System.Web.UI.Page
         }
         int tripCreate;
         TripsDAO TripObj = new TripsDAO();
-        tripCreate = TripObj.InsertTD(tripType, location, appStart, appEnd, tripStart, tripEnd, tripCost, tripManager, tripManagerContact, moduleCredit);
+        tripCreate = TripObj.InsertTD(tripType, location, appStart, appEnd, tripStart, tripEnd, tripCost, tripManager, tripManagerContact, moduleCredit, GPA);
         if (tripCreate != 0)
         {
             LabelResult.Text = "Trip has been created";
