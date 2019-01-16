@@ -12,18 +12,4 @@ public partial class _Default : System.Web.UI.Page
 
     }
 
-    protected void ButtonDetails_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void ButtonStats_Click(object sender, EventArgs e)
-    {
-
-    }
-
-    protected void ButtonBlog_Click(object sender, EventArgs e)
-    {
-
-    }
 }
