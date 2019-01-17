@@ -19,8 +19,8 @@ public partial class Default2 : System.Web.UI.Page
             SqlDataAdapter sqlDa = new SqlDataAdapter("Select * from Trip", sqlCon);
             DataTable dtbl = new DataTable();
             sqlDa.Fill(dtbl);
-            GridView1.DataSource = dtbl;
-            GridView1.DataBind();
+            GridViewDetails.DataSource = dtbl;
+            GridViewDetails.DataBind();
         }
     }
 
