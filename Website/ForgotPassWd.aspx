@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPagePre-Login.Master" AutoEventWireup="true" CodeBehind="ForgotPassWd.aspx.cs" Inherits="Default2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPagePre-Login.Master" AutoEventWireup="true" CodeBehind="ForgotPassWd.aspx.cs" Inherits="Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <form id="form1" runat="server">
+    
     <div>
         <h2 class="featured-text">Forgot password?</h2>
         <h3>Click for a PIN to reset password</h3>
@@ -19,5 +19,5 @@
         </h4>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
     </div>
-    </form>
+    
 </asp:Content>

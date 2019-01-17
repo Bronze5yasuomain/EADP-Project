@@ -10,7 +10,7 @@
         <br />
         Password: <asp:TextBox ID="TextBoxPassword" runat="server" TextMode="Password"></asp:TextBox>
         <br />
-        <asp:Button ID="ButtonLogin" runat="server" OnClick="ButtonLogin_Click" Text="Login" />
+        <asp:Button ID="ButtonLogin" runat="server" OnClick="ButtonLogin_Click" Text="Login" /><a href="ForgotPassWd.aspx">Forgot Password?</a>
         <br />
        
 
