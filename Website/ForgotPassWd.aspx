@@ -1,4 +1,23 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPagePre-Login.Master" AutoEventWireup="true" CodeBehind="ForgotPassWd.aspx.cs" Inherits="Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPagePre-Login.Master" AutoEventWireup="true" CodeBehind="ForgotPassWd.aspx.cs" inherits="Default2" %>
+
+<script runat="server">
+
+    protected void BtnConfirm_Click(object sender, EventArgs e)
+    {
+
+    }
+
+    protected void BtnEmail_Click(object sender, EventArgs e)
+    {
+
+    }
+    
+    protected void BtnSMS_Click(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     
 </asp:Content>
@@ -8,14 +27,14 @@
         <h2 class="featured-text">Forgot password?</h2>
         <h3>Click for a PIN to reset password</h3>
         <h3>
-            <asp:Button ID="BtnSMS" runat="server" CausesValidation="False" OnClick="Button1_Click" Text="Click for PIN via SMS" />
-            <asp:Button ID="BtnEmail" runat="server" CausesValidation="False" Text="Click for PIN via Email" />
+            <asp:Button ID="BtnSMS" runat="server" CausesValidation="False" OnClick="BtnSMS_Click" Text="Click for PIN via SMS" />
+            <asp:Button ID="BtnEmail" runat="server" CausesValidation="False" Text="Click for PIN via Email" OnClick="BtnEmail_Click" />
         </h3>
         <h4>Enter PIN sent:<asp:TextBox ID="TextBox1" runat="server" TextMode="Number" Rows="6"></asp:TextBox>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Enter your pin">*</asp:RequiredFieldValidator>
         </h4>
         <h4>
-            <asp:Button ID="BtnConfirm" runat="server" Text="Confirm PIN" />
+            <asp:Button ID="BtnConfirm" runat="server" Text="Confirm PIN" OnClick="BtnConfirm_Click" />
         </h4>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
     </div>
