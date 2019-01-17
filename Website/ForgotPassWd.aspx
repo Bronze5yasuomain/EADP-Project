@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPagePre-Login.Master" AutoEventWireup="true" CodeBehind="ForgotPassWd.aspx.cs" inherits="_Default" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPagePre-Login.Master" AutoEventWireup="true" CodeBehind="ForgotPassWd.aspx.cs" %>
 
 <script runat="server">
 
