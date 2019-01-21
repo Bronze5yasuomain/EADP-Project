@@ -12,20 +12,24 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
-        using (SqlConnection sqlCon = new SqlConnection(DBConnect))
-        {
-            sqlCon.Open();
-            SqlDataAdapter sqlDa = new SqlDataAdapter("Select * from Trip", sqlCon);
-            DataTable dtbl = new DataTable();
-            sqlDa.Fill(dtbl);
-            GridViewDetails.DataSource = dtbl;
-            GridViewDetails.DataBind();
-        }
+        //string DBConnect = ConfigurationManager.ConnectionStrings["ConnStr"].ConnectionString;
+        //using (SqlConnection sqlCon = new SqlConnection(DBConnect))
+        //{
+        //    sqlCon.Open();
+        //    SqlDataAdapter sqlDa = new SqlDataAdapter("Select * from Trip", sqlCon);
+        //    DataTable dtbl = new DataTable();
+        //    sqlDa.Fill(dtbl);
+        //    GridViewDetails.DataSource = dtbl;
+        //    GridViewDetails.DataBind();
+        //}
     }
 
-    protected void lnkSelect_Click(object sender, EventArgs e)
+    protected void linkSelect_Click(object sender, EventArgs e)
     {
-        int tripid = Convert.ToInt32((sender as LinkButton).CommandArgument);
+        //int tripid = Convert.ToInt32((sender as LinkButton).CommandArgument);
+    }
+
+    protected void GridViewDetails_RowCommand(object sender, GridViewCommandEventArgs e)
+    {
     }
 }
