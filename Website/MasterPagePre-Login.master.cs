@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +13,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
         {
             accButton.Style.Add("display", "inline-block");
             loginBurron.Style.Add("display", "none");
-            txtAcc.InnerText = Session["AdminId"].ToString();
+            txtAcc.InnerText = Session["Name"].ToString();
             txtAcc.Visible = true;
         }
         else
@@ -21,9 +21,14 @@ public partial class MasterPage : System.Web.UI.MasterPage
             accButton.Style.Add("display", "none");
             loginBurron.Style.Add("display", "inline-block");
         }
-     
+        logoutButton.ServerClick += new EventHandler(logoutButton_Click);
     }
 
+    private void logoutButton_Click(object sender, EventArgs e)
+    {
+        Session.Clear();
+        Response.Redirect("Homepage.aspx");
+    }
 
     protected void search_Click(object sender, EventArgs e)
     {
@@ -34,4 +39,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         Response.Redirect("Login.aspx");
     }
+
+
 }
