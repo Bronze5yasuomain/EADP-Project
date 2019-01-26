@@ -1,9 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPagePre-Login.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="_Default" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPagePre-Login.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h2>Login</h2>
+    <asp:Label ID="LabelWrong" runat="server" ForeColor="Red" ></asp:Label>
     <div class="Login Panel">
         Admin ID:
         <asp:TextBox ID="TextBoxAdminId" runat="server"></asp:TextBox>
@@ -13,8 +14,6 @@
         <asp:Button ID="ButtonLogin" runat="server" OnClick="ButtonLogin_Click" Text="Login" /><a href="ForgotPassWd.aspx">Forgot Password?</a>
         <br />
        
-
-        
     </div>
 </asp:Content>
 
