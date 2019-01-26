@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -13,8 +13,22 @@ public partial class _Default : System.Web.UI.Page
         if (!IsPostBack)
         {
             lblMessage.Visible = false;
-            hyperlink.Visible = false;
             LoadImages();
+            if (Session["Role"] != null)
+            {
+                if (Session["Role"].ToString() == "admin")
+                {
+
+                }
+                else
+                {
+                    GridView1.Visible = false;
+                }
+            }
+            else
+            {
+                GridView1.Visible = false;
+            }
         }
     }
 
@@ -101,9 +115,6 @@ public partial class _Default : System.Web.UI.Page
                 lblMessage.Visible = true;
                 lblMessage.ForeColor = System.Drawing.Color.Green;
                 lblMessage.Text = "Upload Successful";
-                hyperlink.Visible = true;
-                hyperlink.NavigateUrl = "~/WebForm2.aspx?Id=" +
-                    cmd.Parameters["@NewId"].Value.ToString();
             }
         }
         else
@@ -111,8 +122,9 @@ public partial class _Default : System.Web.UI.Page
             lblMessage.Visible = true;
             lblMessage.ForeColor = System.Drawing.Color.Red;
             lblMessage.Text = "Only images (.jpg, .png, .gif and .bmp) can be uploaded";
-            hyperlink.Visible = false;
         }
+
+        LoadImages();
     }
 
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
