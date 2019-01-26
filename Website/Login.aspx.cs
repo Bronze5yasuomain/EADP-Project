@@ -1,4 +1,4 @@
-﻿using EADPProjectNYPTravels;
+using EADPProjectNYPTravels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +25,12 @@ public partial class _Default : System.Web.UI.Page
         {
             Session["AdminId"] = obj.AdminId;
             Session["Name"] = obj.Name;
+            Session["Role"] = obj.Role;
             Response.Redirect("Homepage.aspx");
+        }
+        else
+        {
+            LabelWrong.Text = "Wrong username/password.";
         }
     }
 }
