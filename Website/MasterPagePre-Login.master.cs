@@ -1,9 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
+
 
 public partial class MasterPage : System.Web.UI.MasterPage
 {
@@ -15,20 +17,35 @@ public partial class MasterPage : System.Web.UI.MasterPage
             loginBurron.Style.Add("display", "none");
             txtAcc.InnerText = Session["Name"].ToString();
             txtAcc.Visible = true;
+            string cs = ConfigurationManager.ConnectionStrings["connStr"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand cmd = new SqlCommand("spGetImageById", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                SqlParameter paramId = new SqlParameter()
+                {
+                    ParameterName = "@picId",
+                    Value = "1"
+                };
+                cmd.Parameters.Add(paramId);
+
+                con.Open();
+                byte[] bytes = (byte[])cmd.ExecuteScalar();
+                string strBase64 = Convert.ToBase64String(bytes);
+                Image1.ImageUrl = "data:Image/png;base64," + strBase64;
+                
+            }
         }
         else
         {
             accButton.Style.Add("display", "none");
             loginBurron.Style.Add("display", "inline-block");
         }
-        logoutButton.ServerClick += new EventHandler(logoutButton_Click);
+   
     }
 
-    private void logoutButton_Click(object sender, EventArgs e)
-    {
-        Session.Clear();
-        Response.Redirect("Homepage.aspx");
-    }
+
 
     protected void search_Click(object sender, EventArgs e)
     {
@@ -41,4 +58,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
     }
 
 
+
+    protected void ButtonLogout_Click(object sender, EventArgs e)
+    {
+        Session.Clear();
+        Response.Redirect("Homepage.aspx");
+    }
 }
