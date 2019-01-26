@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -40,6 +40,7 @@ namespace EADPProjectNYPTravels
                 user.AdminId = row["AdminId"].ToString();
                 user.Password = row["Password"].ToString();
                 user.Name = row["Name"].ToString();
+                user.Role = row["Role"].ToString();
             }
 
             else
