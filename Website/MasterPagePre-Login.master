@@ -1,9 +1,10 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPagePre-Login.master.cs" Inherits="MasterPage" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPagePre-Login.master.cs" Inherits="MasterPage" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -67,11 +68,17 @@
 	    width: 100%;
     }
     .wrap span {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 150%;
-}
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 150%;
+    }
+    #loginBurron{
+        color: white;
+    }
+    #txtAcc{
+        color:white;
+    }
 	</style>
 </head>
 <body>
@@ -80,9 +87,9 @@
 		<!-- navbar -->
 		<nav class="navbar">
 			<ul>
-				<li><a href="#">Home</a></li>
+				<li><a href="Homepage.aspx">Home</a></li>
 				<li><a href="#">Trips</a></li>
-				<li><a href="#">Statistics</a></li>
+				<li><a href="PhotoGallery.aspx">Gallery</a></li>
 				<li><a href="#">Account</a></li>
 			</ul>
 		</nav>
@@ -94,8 +101,12 @@
        
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" runat="server">
-            <i class="fa fa-user"></i> <span class="clearfix d-none d-sm-inline-block" id="txtAcc" runat="server" visible="False">Account</span>
+            <i class="fa fa-user"></i> 
+               <span class="clearfix d-none d-sm-inline-block" id="txtAcc" runat="server">Account</span>
           </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" id="logoutButton" runat="server">Log Out</a>
+          </div>
           </div>
 
       
